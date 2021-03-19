@@ -39,26 +39,69 @@
         'description': 'The official mascot of the Linux kernel!',
         'color': '#000'
       },
+      {
+        'title': 'CSS3',
+        'icon': 'https://image.freepik.com/vetores-gratis/icone-de-pizza-colecao-de-fast-food-icone-de-comida-isolado_138676-504.jpg',
+        'description': 'The latest version of cascading stylesheets - the styling language of the web!',
+        'color': '#0CA9EA'
+      },
+      {
+        'title': 'Tux',
+        'icon': 'https://image.freepik.com/vetores-gratis/icone-de-pizza-colecao-de-fast-food-icone-de-comida-isolado_138676-504.jpg',
+        'description': 'The official mascot of the Linux kernel!',
+        'color': '#000'
+      },
+      {
+        'title': 'CSS3',
+        'icon': 'https://image.freepik.com/vetores-gratis/icone-de-pizza-colecao-de-fast-food-icone-de-comida-isolado_138676-504.jpg',
+        'description': 'The latest version of cascading stylesheets - the styling language of the web!',
+        'color': '#0CA9EA'
+      },
+      {
+        'title': 'Tux',
+        'icon': 'https://image.freepik.com/vetores-gratis/icone-de-pizza-colecao-de-fast-food-icone-de-comida-isolado_138676-504.jpg',
+        'description': 'The official mascot of the Linux kernel!',
+        'color': '#000'
+      },
+      {
+        'title': 'CSS3',
+        'icon': 'https://image.freepik.com/vetores-gratis/icone-de-pizza-colecao-de-fast-food-icone-de-comida-isolado_138676-504.jpg',
+        'description': 'The latest version of cascading stylesheets - the styling language of the web!',
+        'color': '#0CA9EA'
+      },
+      {
+        'title': 'Tux',
+        'icon': 'https://image.freepik.com/vetores-gratis/icone-de-pizza-colecao-de-fast-food-icone-de-comida-isolado_138676-504.jpg',
+        'description': 'The official mascot of the Linux kernel!',
+        'color': '#000'
+      },
     ];
 
     customElements.define('nav-home', class NavHome extends HTMLElement {
       connectedCallback() {
         this.innerHTML = `
-          <ion-header translucent>
+          <ion-header >
               <ion-toolbar>
-                <ion-title>Searchbar</ion-title>
+                <ion-title>Pesquisar</ion-title>
               </ion-toolbar>
               <ion-toolbar>
                 <ion-searchbar></ion-searchbar>
               </ion-toolbar>
+              <ion-toolbar>
+                <section>
+                  <header>Ordenar por:</header>
+                  <ion-button size="xx-small" color="primary">Cód.</ion-button>
+                  <ion-button size="xx-small" color="secondary">Nome</ion-button>
+                  <ion-button size="xx-small" color="success">Preço</ion-button>
+                </section>
+              </ion-toolbar>
           </ion-header>
+
           <ion-content fullscreen>
             <ion-list>
             ${techs.map(tech => `
                 <ion-item button onclick="showDetail('${tech.title}')">
-
                     <img src="${tech.icon}" width="100">
-
                   <ion-label>
                     <h3>${tech.title}</h3>
                   </ion-label>
@@ -67,6 +110,12 @@
             `).join('\n')}
             </ion-list>
           </ion-content>
+
+          <ion-footer>
+            <ion-toolbar>
+              <ion-badge color="primary">Total: R$ 00,00</ion-badge>
+            </ion-toolbar>
+          </ion-footer>
         `;
       }
     });
@@ -92,6 +141,51 @@
           <ion-content fullscreen class="ion-padding">
             <img src="${this.tech.icon}"  width="100" />
             <p>${this.tech.description}</p>
+			
+            <ion-list>
+              <ion-item>
+                <ion-label>Pet</ion-label>
+                <ion-select value="dog">
+                <ion-select-option value="cat">Cat</ion-select-option>
+                <ion-select-option value="dog">Dog</ion-select-option>
+                <ion-select-option value="dog">Dog</ion-select-option>
+                <ion-select-option value="dog">Dog</ion-select-option>
+                <ion-select-option value="dog">Dog</ion-select-option>
+                </ion-select>
+              </ion-item>
+
+              <ion-item>
+                <ion-label>Gaming</ion-label>
+                <ion-select interface="popover" multiple >
+                <ion-select-option value="nes">NES</ion-select-option>
+                <ion-select-option value="n64">Nintendo64</ion-select-option>
+                <ion-select-option value="ps">PlayStation</ion-select-option>
+                <ion-select-option value="genesis">Sega Genesis</ion-select-option>
+                <ion-select-option value="saturn">Sega Saturn</ion-select-option>
+                <ion-select-option value="snes">SNES</ion-select-option>
+                </ion-select>
+              </ion-item>
+
+              <!-- Checkboxes in a List -->
+              <ion-list>
+                <ion-item>
+                  <ion-label>Pepperoni</ion-label>
+                  <ion-checkbox slot="end" value="pepperoni" checked></ion-checkbox>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label>Sausage</ion-label>
+                  <ion-checkbox slot="end" value="sausage" --border-radius="15"></ion-checkbox>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label>Mushrooms</ion-label>
+                  <ion-checkbox slot="end" value="mushrooms"></ion-checkbox>
+                </ion-item>
+              </ion-list>
+              
+              
+            </ion-list>
           </ion-content>
         `;
       }
