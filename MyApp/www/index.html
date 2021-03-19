@@ -138,6 +138,7 @@
               <ion-title>${this.tech.title}</ion-title>
             </ion-toolbar>
           </ion-header>
+
           <ion-content fullscreen class="ion-padding">
             <img src="${this.tech.icon}"  width="100" />
             <p>${this.tech.description}</p>
@@ -157,34 +158,32 @@
               <ion-item>
                 <ion-label>Gaming</ion-label>
                 <ion-select interface="popover" multiple >
-                <ion-select-option value="nes">NES</ion-select-option>
-                <ion-select-option value="n64">Nintendo64</ion-select-option>
-                <ion-select-option value="ps">PlayStation</ion-select-option>
-                <ion-select-option value="genesis">Sega Genesis</ion-select-option>
-                <ion-select-option value="saturn">Sega Saturn</ion-select-option>
-                <ion-select-option value="snes">SNES</ion-select-option>
+                  <ion-select-option value="nes">NES</ion-select-option>
+                  <ion-select-option value="n64">Nintendo64</ion-select-option>
+                  <ion-select-option value="ps">PlayStation</ion-select-option>
+                  <ion-select-option value="genesis">Sega Genesis</ion-select-option>
+                  <ion-select-option value="saturn">Sega Saturn</ion-select-option>
+                  <ion-select-option value="snes">SNES</ion-select-option>
                 </ion-select>
+              </ion-item>              
+            </ion-list>
+
+            <!-- Checkboxes in a List -->
+            <ion-list>
+              <ion-item>
+                <ion-label>Pepperoni</ion-label>
+                <ion-checkbox slot="end" value="pepperoni" checked></ion-checkbox>
               </ion-item>
 
-              <!-- Checkboxes in a List -->
-              <ion-list>
-                <ion-item>
-                  <ion-label>Pepperoni</ion-label>
-                  <ion-checkbox slot="end" value="pepperoni" checked></ion-checkbox>
-                </ion-item>
+              <ion-item>
+                <ion-label>Sausage</ion-label>
+                <ion-checkbox slot="end" value="sausage" --border-radius="15"></ion-checkbox>
+              </ion-item>
 
-                <ion-item>
-                  <ion-label>Sausage</ion-label>
-                  <ion-checkbox slot="end" value="sausage" --border-radius="15"></ion-checkbox>
-                </ion-item>
-
-                <ion-item>
-                  <ion-label>Mushrooms</ion-label>
-                  <ion-checkbox slot="end" value="mushrooms"></ion-checkbox>
-                </ion-item>
-              </ion-list>
-              
-              
+              <ion-item>
+                <ion-label>Mushrooms</ion-label>
+                <ion-checkbox slot="end" value="mushrooms"></ion-checkbox>
+              </ion-item>
             </ion-list>
           </ion-content>
         `;
