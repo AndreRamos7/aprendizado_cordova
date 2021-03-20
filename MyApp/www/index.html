@@ -15,11 +15,18 @@
   </style>
 </head>
 <body>
-<ion-app>
-      <ion-nav root="nav-home"></ion-nav>
-</ion-app>
+    
+  <ion-app>
+        <ion-nav root="nav-home"></ion-nav>
+  </ion-app>
 
 <script>
+    /*
+    var storage = window.localStorage;
+        var value = storage.getItem(key); // Pass a key name to get its value.
+        storage.setItem(key, value) // Pass a key name and its value to add or update that key.
+        storage.removeItem(key) // Pass a key name to remove that key from storage.
+    */
     function setCookie(cname, cvalue, exdays) {
       var d = new Date();
       d.setTime(d.getTime() + (exdays*24*60*60*1000));
