@@ -7,6 +7,7 @@
     <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
     <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>
+    <link rel="stylesheet" href="css/estilo.css"/>
     <style>
       :root {
         --ion-safe-area-top: 20px;
@@ -62,11 +63,55 @@
               <ion-title>Itens</ion-title>
             </ion-toolbar>
           </ion-header>
+
           <ion-content class="ion-padding">
-            <ion-button expand="block" onclick="openMenu()">Open Menu</ion-button>
-            <ion-nav root="nav-home">aa</ion-nav>
+            <ion-tabs>
+              <ion-tab tab="music">
+                <ion-content fullscreen class="ion-padding">
+                  <ion-nav root="nav-home"></ion-nav>
+                </ion-content>
+              </ion-tab>
+        
+              <ion-tab tab="movies">
+                <ion-header translucent>
+                  <ion-toolbar>
+                    <ion-title>Comanda</ion-title>
+                  </ion-toolbar>
+                </ion-header>
+        
+                <ion-content fullscreen class="ion-padding">
+                  <h1>Comanda</h1>
+                </ion-content>
+              </ion-tab>
+        
+              <ion-tab tab="games">
+                <ion-header translucent>
+                  <ion-toolbar>
+                    <ion-title>Histórico</ion-title>
+                  </ion-toolbar>
+                </ion-header>
+        
+                <ion-content fullscreen class="ion-padding">
+                  <h1>Histórico</h1>
+                </ion-content>
+              </ion-tab>
+        
+              <ion-tab-bar slot="bottom">
+                <ion-tab-button tab="music">
+                  <ion-label>Produtos</ion-label>
+                  <ion-icon name="pizza-outline"></ion-icon>
+                </ion-tab-button>
+                <ion-tab-button tab="movies">
+                  <ion-label>Comanda</ion-label>
+                  <ion-icon name="videocam"></ion-icon>
+                </ion-tab-button>
+                <ion-tab-button tab="games">
+                  <ion-label>Histórico</ion-label>
+                  <ion-icon name="game-controller"></ion-icon>
+                </ion-tab-button>
+              </ion-tab-bar>
+            </ion-tabs>
           </ion-content>
-          
         </div>
   </ion-app>
   <script type="text/Javascript" src="js/armazem_cookies.js"></script>
@@ -160,9 +205,9 @@
             <ion-toolbar>
               <section>
                 <header>Ordenar por:</header>
-                <ion-button size="xx-small" color="primary">Cód.</ion-button>
-                <ion-button size="xx-small" color="secondary">Nome</ion-button>
-                <ion-button size="xx-small" color="success">Preço</ion-button>
+                <ion-button size="xx-small" color="primary" class="botao_de_ordenacao">Cód.</ion-button>
+                <ion-button size="xx-small" color="secondary" class="botao_de_ordenacao">Nome</ion-button>
+                <ion-button size="xx-small" color="success" class="botao_de_ordenacao">Preço</ion-button>
               </section>
             </ion-toolbar>
         </ion-header>
