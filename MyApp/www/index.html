@@ -27,102 +27,104 @@
       window.menuController = menuController;
     </script>
 </head>
-<body>    
-  <ion-app>         
-    
-        <ion-menu side="start" content-id="main-content">
-          <ion-header>
-            <ion-toolbar translucent>
-              <ion-title>Produtos Total: R$ 00,00</ion-title>
-            </ion-toolbar>
-          </ion-header>
-          <ion-content>
-            <ion-list>
-              <ion-item>
-                <ion-icon name="mail" slot="start"></ion-icon>
-                <ion-chip>Pizza</ion-chip>
-              </ion-item>
-              <ion-item>
-                <ion-icon name="paper-plane" slot="start"></ion-icon>
-                <ion-chip>Hanburguer</ion-chip>
-              </ion-item>
-              <ion-item>
-                <ion-icon name="heart" slot="start"></ion-icon>
-                <ion-chip>X-Burguer</ion-chip>
-              </ion-item>              
-            </ion-list>
-          </ion-content>
-        </ion-menu>
-    
-        <div class="ion-page" id="main-content">
-          <ion-header>
-            <ion-toolbar>
-              <ion-buttons slot="start">
-                <ion-menu-button></ion-menu-button>
-              </ion-buttons>
-              <ion-title>Itens</ion-title>
-            </ion-toolbar>
-          </ion-header>
+<body>
+<ion-app>
 
-          <ion-content class="ion-padding">
+    <ion-menu side="start" content-id="main-content">
+        <ion-header>
+            <ion-toolbar translucent>
+                <ion-title>Produtos Total: R$ 00,00</ion-title>
+            </ion-toolbar>
+        </ion-header>
+        <ion-content>
+            <ion-list>
+                <ion-item>
+                    <ion-icon name="mail" slot="start"></ion-icon>
+                    <ion-chip>Pizza</ion-chip>
+                </ion-item>
+                <ion-item>
+                    <ion-icon name="paper-plane" slot="start"></ion-icon>
+                    <ion-chip>Hanburguer</ion-chip>
+                </ion-item>
+                <ion-item>
+                    <ion-icon name="heart" slot="start"></ion-icon>
+                    <ion-chip>X-Burguer</ion-chip>
+                </ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-menu>
+
+    <div class="ion-page" id="main-content">
+        <ion-header>
+            <ion-toolbar>
+                <ion-buttons slot="start">
+                    <ion-menu-button></ion-menu-button>
+                </ion-buttons>
+                <ion-title>Itens</ion-title>
+                <ion-title slot="end">TOTAL: R$ 00,00</ion-title>
+            </ion-toolbar>
+        </ion-header>
+
+        <ion-content class="ion-padding">
             <ion-tabs>
-              <ion-tab tab="music">
-                <ion-content fullscreen class="ion-padding">
-                  <ion-nav root="nav-home"></ion-nav>
-                </ion-content>
-              </ion-tab>
-        
-              <ion-tab tab="movies">
-                <ion-header translucent>
-                  <ion-toolbar>
-                    <ion-title>Comanda</ion-title>
-                  </ion-toolbar>
-                </ion-header>
-        
-                <ion-content fullscreen class="ion-padding">
-                  <h1>Comanda</h1>
-                </ion-content>
-              </ion-tab>
-        
-              <ion-tab tab="games">
-                <ion-header translucent>
-                  <ion-toolbar>
-                    <ion-title>Histórico</ion-title>
-                  </ion-toolbar>
-                </ion-header>
-        
-                <ion-content fullscreen class="ion-padding">
-                  <h1>Histórico</h1>
-                </ion-content>
-              </ion-tab>
-        
-              <ion-tab-bar slot="bottom">
-                <ion-tab-button tab="music">
-                  <ion-label>Produtos</ion-label>
-                  <ion-icon name="pizza-outline"></ion-icon>
-                </ion-tab-button>
-                <ion-tab-button tab="movies">
-                  <ion-label>Comanda</ion-label>
-                  <ion-icon name="videocam"></ion-icon>
-                </ion-tab-button>
-                <ion-tab-button tab="games">
-                  <ion-label>Histórico</ion-label>
-                  <ion-icon name="game-controller"></ion-icon>
-                </ion-tab-button>
-              </ion-tab-bar>
+                <ion-tab tab="music">
+                    <ion-content fullscreen class="ion-padding">
+                        <ion-nav root="nav-home"></ion-nav>
+                    </ion-content>
+                </ion-tab>
+
+                <ion-tab tab="movies">
+                    <ion-header translucent>
+                        <ion-toolbar>
+                            <ion-title>Comanda</ion-title>
+                        </ion-toolbar>
+                    </ion-header>
+
+                    <ion-content fullscreen class="ion-padding">
+                        <h1>Comanda</h1>
+                    </ion-content>
+                </ion-tab>
+
+                <ion-tab tab="games">
+                    <ion-header translucent>
+                        <ion-toolbar>
+                            <ion-title>Meus pedidos</ion-title>
+                        </ion-toolbar>
+                    </ion-header>
+
+                    <ion-content fullscreen class="ion-padding">
+                        <h1>Meus pedidos</h1>
+                    </ion-content>
+                </ion-tab>
+
+                <ion-tab-bar slot="bottom">
+                    <ion-tab-button tab="music">
+                        <ion-label>Produtos</ion-label>
+                        <ion-icon name="pizza-outline"></ion-icon>
+                    </ion-tab-button>
+                    <ion-tab-button tab="movies">
+                        <ion-label>Comanda</ion-label>
+                        <ion-icon name="videocam"></ion-icon>
+                    </ion-tab-button>
+                    <ion-tab-button tab="games">
+                        <ion-label>Meus pedidos</ion-label>
+                        <ion-icon name="game-controller"></ion-icon>
+                    </ion-tab-button>
+                </ion-tab-bar>              
             </ion-tabs>
-          </ion-content>
-        </div>
-  </ion-app>
-  <script type="text/Javascript" src="js/armazem_cookies.js"></script>
-  <script type="text/Javascript">
-      document.addEventListener("backbutton", onBackKeyDown, false);  
-      function onBackKeyDown(e) { 
-        e.preventDefault(); 
-        alert('Back Button is Pressed!'); 
+        </ion-content>
+        
+    </div>
+</ion-app>
+<script type="text/Javascript" src="js/armazem_cookies.js"></script>
+<script type="text/Javascript">
+      document.addEventListener("backbutton", onBackKeyDown, false);
+      function onBackKeyDown(e) {
+        e.preventDefault();
+        alert('Back Button is Pressed!');
       }
   </script>
-  <script>
+<script>
     async function openMenu() {
       await menuController.open();
     }
@@ -135,7 +137,7 @@
         storage.setItem(key, value) // Pass a key name and its value to add or update that key.
         storage.removeItem(key) // Pass a key name to remove that key from storage.
     */
- 
+
     techs = [
       {
         'title': 'Calabresa',
@@ -264,20 +266,20 @@
           <ion-content fullscreen class="ion-padding">
             <img src="${this.tech.icon}"  width="100" />
             <p>${this.tech.description}</p>
-			
+
             <ion-list>
               <ion-item>
                 <ion-label>Tamanho:</ion-label>
-                <ion-select value="">
+                <ion-select value="" interface="popover" >
                   <ion-select-option value="grande"> Grande, R$ 28,00 </ion-select-option>
                   <ion-select-option value="media"> Média, R$ 25,00 </ion-select-option>
-                  <ion-select-option value="dog"> Pequena R$ 21,00 </ion-select-option>                  
+                  <ion-select-option value="dog"> Pequena R$ 21,00 </ion-select-option>
                 </ion-select>
               </ion-item>
 
               <ion-item>
                 <ion-label>Bordas</ion-label>
-                
+
                 <ion-select name="bordas" interface="popover" (ionChange)="console.log('aaaa');">
                   <ion-select-option value="catupiri">catupiri</ion-select-option>
                   <ion-select-option value="catchup">catchup</ion-select-option>
@@ -285,15 +287,15 @@
                   <ion-select-option value="mostarda">mostarda</ion-select-option>
                   <ion-select-option value="samaioneseturn">maionese</ion-select-option>
                 </ion-select>
-              </ion-item>              
+              </ion-item>
             </ion-list>
 
             <!-- Checkboxes in a List -->
             <ion-label>Itens Opcionais</ion-label>
             <ion-list>
-              <ion-item>  
+              <ion-item>
                 <ion-checkbox slot="start" value="cebola" checked></ion-checkbox>
-                <ion-label>Cebola, R$ 0,50</ion-label>              
+                <ion-label>Cebola, R$ 0,50</ion-label>
               </ion-item>
               <ion-item>
                 <ion-checkbox slot="start" value="alho" ></ion-checkbox>
@@ -304,6 +306,9 @@
                 <ion-label>Azeitona, R$ 0,50</ion-label>
               </ion-item>
             </ion-list>
+            <ion-item>
+              <ion-textarea placeholder="Digite observações aqui..."></ion-textarea>
+            </ion-item>
           </ion-content>
 
           <ion-footer>

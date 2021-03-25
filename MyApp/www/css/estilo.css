@@ -2,3 +2,6 @@
     height: 20px;
     font-size: xx-small;
 }
+ion-tab-bar{
+    padding-bottom: 0px;
+}
