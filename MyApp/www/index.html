@@ -7,6 +7,9 @@
     <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
     <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>
+    <script type="text/Javascript" src="js/armazem_cookies.js"></script>
+    <script type="text/Javascript" src="js/index.js"></script>
+    <script type="text/Javascript" src="cordova.js"></script>
     <link rel="stylesheet" href="css/estilo.css"/>
     <style>
       :root {
@@ -28,8 +31,7 @@
     </script>
 </head>
 <body>    
-  <ion-app>         
-    
+  <ion-app> 
         <ion-menu side="start" content-id="main-content">
           <ion-header>
             <ion-toolbar translucent>
@@ -61,6 +63,7 @@
                 <ion-menu-button></ion-menu-button>
               </ion-buttons>
               <ion-title>Itens</ion-title>
+              <ion-title slot="end">TOTAL: R$ 00,00</ion-title>
             </ion-toolbar>
           </ion-header>
 
@@ -75,25 +78,50 @@
               <ion-tab tab="movies">
                 <ion-header translucent>
                   <ion-toolbar>
-                    <ion-title>Comanda</ion-title>
+                    <ion-title>Comanda</ion-title>                  
+                    <ion-button  color="success" slot="end"> 
+                      <ion-icon name="send-outline"></ion-icon> 
+                      Enviar
+                    </ion-button>
                   </ion-toolbar>
                 </ion-header>
         
                 <ion-content fullscreen class="ion-padding">
-                  <h1>Comanda</h1>
+                    <ion-list>                    
+                        <ion-item button onclick="alert('oi')">                            
+                          <ion-label>
+                            <h3>Cod.: 02</h3>
+                            <p> Calabresa </p>
+                          </ion-label>
+                          <ion-label>
+                              com alho,  frango, carne, cebola
+                          </ion-label>
+                          <ion-spinner name="lines"></ion-spinner>
+                        </ion-item>
+                   </ion-list>
                 </ion-content>
               </ion-tab>
         
               <ion-tab tab="games">
                 <ion-header translucent>
                   <ion-toolbar>
-                    <ion-title>Histórico</ion-title>
+                    <ion-title>Meus Pedidos</ion-title>
                   </ion-toolbar>
                 </ion-header>
         
                 <ion-content fullscreen class="ion-padding">
-                  <h1>Histórico</h1>
-                </ion-content>
+                  <h1>Meus Pedidos</h1>   
+                               
+                   <ion-label>Bordas</ion-label>
+                
+                   <ion-select name="bordas" interface="popover" id="seletor" ionChange="teste();">
+                     <ion-select-option value="catupiri">catupiri</ion-select-option>
+                     <ion-select-option value="catchup">catchup</ion-select-option>
+                     <ion-select-option value="recheada">recheada</ion-select-option>
+                     <ion-select-option value="mostarda">mostarda</ion-select-option>
+                     <ion-select-option value="maionese">maionese</ion-select-option>
+                   </ion-select>
+                  <ion-toggle (ionChange)="teste();"></ion-toggle>
               </ion-tab>
         
               <ion-tab-bar slot="bottom">
@@ -103,18 +131,18 @@
                 </ion-tab-button>
                 <ion-tab-button tab="movies">
                   <ion-label>Comanda</ion-label>
-                  <ion-icon name="videocam"></ion-icon>
+                  <ion-icon name="create-outline"></ion-icon>
                 </ion-tab-button>
                 <ion-tab-button tab="games">
-                  <ion-label>Histórico</ion-label>
-                  <ion-icon name="game-controller"></ion-icon>
+                  <ion-label>Meus pedidos</ion-label>
+                  <ion-icon name="bicycle-outline"></ion-icon>
                 </ion-tab-button>
               </ion-tab-bar>
             </ion-tabs>
           </ion-content>
         </div>
   </ion-app>
-  <script type="text/Javascript" src="js/armazem_cookies.js"></script>
+  
   <script type="text/Javascript">
       document.addEventListener("backbutton", onBackKeyDown, false);  
       function onBackKeyDown(e) { 
@@ -127,6 +155,7 @@
       await menuController.open();
     }
   </script>
+  <script type="text/Javascript" src="js/elementos_customizados.js"></script>
 <script>
     var storage = window.localStorage;
     /*
@@ -195,47 +224,7 @@
     storage.setItem("total", "12,00");
     var total = storage.getItem("total");
 
-    customElements.define('nav-home', class NavHome extends HTMLElement {
-      connectedCallback() {
-        this.innerHTML = `
-        <ion-header >
-            <ion-toolbar>
-              <ion-searchbar></ion-searchbar>
-            </ion-toolbar>
-            <ion-toolbar>
-              <section>
-                <header>Ordenar por:</header>
-                <ion-button size="xx-small" color="primary" class="botao_de_ordenacao">Cód.</ion-button>
-                <ion-button size="xx-small" color="secondary" class="botao_de_ordenacao">Nome</ion-button>
-                <ion-button size="xx-small" color="success" class="botao_de_ordenacao">Preço</ion-button>
-              </section>
-            </ion-toolbar>
-        </ion-header>
-
-          <ion-content fullscreen>
-            <ion-list>
-            ${techs.map(tech => `
-                <ion-item button onclick="showDetail('${tech.title}')">
-                    <img src="${tech.icon}" width="100">
-                  <ion-label>
-                    <h3>${tech.title}</h3>
-                  </ion-label>
-                  <ion-spinner name="lines"></ion-spinner>
-                </ion-item>
-            `).join('\n')}
-            </ion-list>
-          </ion-content>
-
-          <ion-footer>
-            <ion-toolbar>
-              <ion-text color="primary">Total: R$ ${total}</ion-text>
-              <ion-button size="xx-small" slot="end" color="primary" onclick="alert('oi');">Meus pedidos</ion-button>
-            </ion-toolbar>
-          </ion-footer>
-        `;
-      }
-    });
-
+   
     const nav = document.querySelector('ion-nav');
 
     function showDetail(title) {
@@ -249,72 +238,7 @@
       valor_total.innerText = valor;
     }
 
-    customElements.define('nav-detail', class NavDetail extends HTMLElement {
-      connectedCallback() {
-        this.innerHTML = `
-          <ion-header translucent>
-            <ion-toolbar>
-              <ion-buttons slot="start">
-                <ion-back-button defaultHref="/"></ion-back-button>
-              </ion-buttons>
-              <ion-title>${this.tech.title}</ion-title>
-            </ion-toolbar>
-          </ion-header>
-
-          <ion-content fullscreen class="ion-padding">
-            <img src="${this.tech.icon}"  width="100" />
-            <p>${this.tech.description}</p>
-			
-            <ion-list>
-              <ion-item>
-                <ion-label>Tamanho:</ion-label>
-                <ion-select value="">
-                  <ion-select-option value="grande"> Grande, R$ 28,00 </ion-select-option>
-                  <ion-select-option value="media"> Média, R$ 25,00 </ion-select-option>
-                  <ion-select-option value="dog"> Pequena R$ 21,00 </ion-select-option>                  
-                </ion-select>
-              </ion-item>
-
-              <ion-item>
-                <ion-label>Bordas</ion-label>
-                
-                <ion-select name="bordas" interface="popover" (ionChange)="console.log('aaaa');">
-                  <ion-select-option value="catupiri">catupiri</ion-select-option>
-                  <ion-select-option value="catchup">catchup</ion-select-option>
-                  <ion-select-option value="recheada">recheada</ion-select-option>
-                  <ion-select-option value="mostarda">mostarda</ion-select-option>
-                  <ion-select-option value="samaioneseturn">maionese</ion-select-option>
-                </ion-select>
-              </ion-item>              
-            </ion-list>
-
-            <!-- Checkboxes in a List -->
-            <ion-label>Itens Opcionais</ion-label>
-            <ion-list>
-              <ion-item>  
-                <ion-checkbox slot="start" value="cebola" checked></ion-checkbox>
-                <ion-label>Cebola, R$ 0,50</ion-label>              
-              </ion-item>
-              <ion-item>
-                <ion-checkbox slot="start" value="alho" ></ion-checkbox>
-                <ion-label>Alho, R$ 0,50</ion-label>
-              </ion-item>
-              <ion-item>
-                <ion-checkbox slot="start" value="azeitona"></ion-checkbox>
-                <ion-label>Azeitona, R$ 0,50</ion-label>
-              </ion-item>
-            </ion-list>
-          </ion-content>
-
-          <ion-footer>
-            <ion-toolbar>
-              <ion-text color="primary" id="valor_total">Total: R$ 00,00</ion-text>
-              <ion-button size="xx-small" slot="end" color="primary">Adicionar</ion-button>
-            </ion-toolbar>
-          </ion-footer>
-        `;
-      }
-    });
+    
   </script>
 </body>
 </html>
