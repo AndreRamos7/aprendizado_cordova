@@ -18,10 +18,10 @@
       }
       *{
         margin-top: 0px;
-        padding-top: 0px;
+        padding: 0px;
       }
-      ion-toolbar{
-        padding-top: 0px !important;
+      ion-tab-bar{
+        padding: 0px !important;
       }
     </style>
 
@@ -88,7 +88,7 @@
         
                 <ion-content fullscreen class="ion-padding">
                     <ion-list>                    
-                        <ion-item button onclick="alert('oi')">                            
+                        <ion-item >                            
                           <ion-label>
                             <h3>Cod.: 02</h3>
                             <p> Calabresa </p>
@@ -96,7 +96,17 @@
                           <ion-label>
                               com alho,  frango, carne, cebola
                           </ion-label>
-                          <ion-spinner name="lines"></ion-spinner>
+                          
+                          <ion-button>
+                              <ion-icon slot="icon-only" name="remove-outline"></ion-icon>
+                          </ion-button>          
+                          <ion-text color="danger">
+                              00
+                          </ion-text>
+                          <ion-button>
+                              <ion-icon slot="icon-only" name="add"></ion-icon> 
+                          </ion-button>
+                          
                         </ion-item>
                    </ion-list>
                 </ion-content>

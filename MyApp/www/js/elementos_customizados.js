@@ -58,31 +58,36 @@ customElements.define('nav-home', class NavHome extends HTMLElement {
         </ion-header>
 
         <ion-content fullscreen class="ion-padding">
-          <img src="${this.tech.icon}"  width="100" />
-          <p>${this.tech.description}</p>
+            <ion-header>
+                
+                <img src="${this.tech.icon}" width="100" />
+                
+                <p>${this.tech.description}</p>
+            </ion-header>
+            
           
-          <ion-list>
-            <ion-item>
-              <ion-label>Tamanho:</ion-label>
-              <ion-select value="">
-                <ion-select-option value="grande"> Grande, R$ 28,00 </ion-select-option>
-                <ion-select-option value="media"> Média, R$ 25,00 </ion-select-option>
-                <ion-select-option value="dog"> Pequena R$ 21,00 </ion-select-option>                  
-              </ion-select>
-            </ion-item>
+            <ion-list>
+                <ion-item>
+                <ion-label>Tamanho:</ion-label>
+                <ion-select value="" interface="popover">
+                    <ion-select-option value="grande"> Grande, R$ 28,00 </ion-select-option>
+                    <ion-select-option value="media"> Média, R$ 25,00 </ion-select-option>
+                    <ion-select-option value="dog"> Pequena R$ 21,00 </ion-select-option>                  
+                </ion-select>
+                </ion-item>
 
-            <ion-item>
-              <ion-label>Bordas</ion-label>
-              
-              <ion-select name="bordas" interface="popover">
-                <ion-select-option value="catupiri">catupiri</ion-select-option>
-                <ion-select-option value="catchup">catchup</ion-select-option>
-                <ion-select-option value="recheada">recheada</ion-select-option>
-                <ion-select-option value="mostarda">mostarda</ion-select-option>
-                <ion-select-option value="maionese">maionese</ion-select-option>
-              </ion-select>
-            </ion-item>              
-          </ion-list>
+                <ion-item>
+                <ion-label>Bordas</ion-label>
+                
+                <ion-select name="bordas" interface="popover">
+                    <ion-select-option value="catupiri">catupiri</ion-select-option>
+                    <ion-select-option value="catchup">catchup</ion-select-option>
+                    <ion-select-option value="recheada">recheada</ion-select-option>
+                    <ion-select-option value="mostarda">mostarda</ion-select-option>
+                    <ion-select-option value="maionese">maionese</ion-select-option>
+                </ion-select>
+                </ion-item>              
+            </ion-list>
 
           <!-- Checkboxes in a List -->
           <ion-label>Itens Opcionais</ion-label>
