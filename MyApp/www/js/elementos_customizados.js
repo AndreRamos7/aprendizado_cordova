@@ -29,9 +29,16 @@ customElements.define('nav-home', class NavHome extends HTMLElement {
           `).join('\n')}
           </ion-list>
         </ion-content>
+
+        <ion-footer>
+          <ion-toolbar>
+            
+          </ion-toolbar>
+        </ion-footer>
       `;
     }
   });
+
 
 
   // =======================================
@@ -45,18 +52,19 @@ customElements.define('nav-home', class NavHome extends HTMLElement {
             <ion-buttons slot="start">
               <ion-back-button defaultHref="/"></ion-back-button>
             </ion-buttons>
-            <ion-title>${this.prod.sabor}</ion-title>
+            <ion-title>${this.prod.sabor}</ion-title>            
+            <ion-button  color="primary" slot="end"> 
+              <ion-icon name="add-circle-outline"></ion-icon>
+              Adicionar
+            </ion-button>
           </ion-toolbar>
         </ion-header>
 
         <ion-content fullscreen class="ion-padding">
-            <ion-header>
-                
-                <img src="${this.prod.icone}" width="100" />
-                
+            <ion-header>                
+                <img src="${this.prod.icone}" width="100" />                
                 <p>${this.prod.descricao}</p>
-            </ion-header>
-            
+            </ion-header>            
           
             <ion-list>
                 <ion-item>
@@ -69,8 +77,7 @@ customElements.define('nav-home', class NavHome extends HTMLElement {
                 </ion-item>
 
                 <ion-item>
-                <ion-label>Bordas</ion-label>
-                
+                <ion-label>Bordas</ion-label>                
                 <ion-select name="bordas" interface="popover">
                     <ion-select-option value="catupiri">catupiri</ion-select-option>
                     <ion-select-option value="catchup">catchup</ion-select-option>
@@ -84,20 +91,19 @@ customElements.define('nav-home', class NavHome extends HTMLElement {
           <!-- Checkboxes in a List -->
           <ion-label>Itens Opcionais</ion-label>
           <ion-list>
-            <ion-item>  
-              <ion-checkbox slot="start" value="cebola" checked></ion-checkbox>
-              <ion-label>Cebola, R$ 0,50</ion-label>              
-            </ion-item>
-            <ion-item>
-              <ion-checkbox slot="start" value="alho" ></ion-checkbox>
-              <ion-label>Alho, R$ 0,50</ion-label>
-            </ion-item>
-            <ion-item>
-              <ion-checkbox slot="start" value="azeitona"></ion-checkbox>
-              <ion-label>Azeitona, R$ 0,50</ion-label>
-            </ion-item>
-          </ion-list>
+            ${this.prod.itens_adicionais.map(item => `
+              <ion-item>  
+                <ion-checkbox slot="start" value="cebola" checked></ion-checkbox>
+                <ion-label>${item.nome + ' ' +  item.valor}</ion-label>              
+              </ion-item>
+            `).join('\n')}
         </ion-content>
+
+        <ion-footer>
+          <ion-toolbar>
+            
+          </ion-toolbar>
+        </ion-footer>
       `;
     }
   });

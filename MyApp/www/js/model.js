@@ -8,7 +8,7 @@ var storage = window.localStorage;
 
 produtos = { "pizza": [
     {'sabor': 'Calabresa',
-    'icone': 'https://image.freepik.com/vetores-gratis/icone-de-pizza-colecao-de-fast-food-icone-de-comida-isolado_138676-504.jpg',
+    'icone': 'https://images.rappi.com.br/products/2097701218-1591715125868.png?d=128x90',
     'descricao': 'Calabresa com queijo, presunto, alho, cebola, pimentão e tomate',
     'itens_adicionais': [
         {'nome':'alho', 'valor': '0,5'}, 
