@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>
     <script type="text/Javascript" src="js/armazem_cookies.js"></script>
     <script type="text/Javascript" src="js/index.js"></script>
+    <script type="text/Javascript" src="js/model.js"></script>
     <script type="text/Javascript" src="cordova.js"></script>
     <link rel="stylesheet" href="css/estilo.css"/>
     <style>
@@ -21,7 +22,8 @@
         padding: 0px;
       }
       ion-tab-bar, ion-toolbar{
-        padding: 0px !important;
+        padding-top: 0px;
+        padding-bottom: 0px;
       }
     </style>
 
@@ -166,79 +168,13 @@
   </script>
   <script type="text/Javascript" src="js/elementos_customizados.js"></script>
 <script>
-    var storage = window.localStorage;
-    /*
-        var storage = window.localStorage;
-        var value = storage.getItem(key); // Pass a key name to get its value.
-        storage.setItem(key, value) // Pass a key name and its value to add or update that key.
-        storage.removeItem(key) // Pass a key name to remove that key from storage.
-    */
- 
-    techs = [
-      {
-        'title': 'Calabresa',
-        'icon': 'https://image.freepik.com/vetores-gratis/icone-de-pizza-colecao-de-fast-food-icone-de-comida-isolado_138676-504.jpg',
-        'description': 'Calabresa com queijo, presunto, alho, cebola, pimentão e tomate',
-        'color': '#E63135'
-      },
-      {
-        'title': 'Portuguesa',
-        'icon': 'https://image.freepik.com/vetores-gratis/icone-de-pizza-colecao-de-fast-food-icone-de-comida-isolado_138676-504.jpg',
-        'description': 'The latest version of cascading stylesheets - the styling language of the web!',
-        'color': '#0CA9EA'
-      },
-      {
-        'title': 'Porpetone',
-        'icon': 'https://image.freepik.com/vetores-gratis/icone-de-pizza-colecao-de-fast-food-icone-de-comida-isolado_138676-504.jpg',
-        'description': 'The official mascot of the Linux kernel!',
-        'color': '#000'
-      },
-      {
-        'title': 'Siciliana',
-        'icon': 'https://image.freepik.com/vetores-gratis/icone-de-pizza-colecao-de-fast-food-icone-de-comida-isolado_138676-504.jpg',
-        'description': 'The latest version of cascading stylesheets - the styling language of the web!',
-        'color': '#0CA9EA'
-      },
-      {
-        'title': 'Siciliana',
-        'icon': 'https://image.freepik.com/vetores-gratis/icone-de-pizza-colecao-de-fast-food-icone-de-comida-isolado_138676-504.jpg',
-        'description': 'The official mascot of the Linux kernel!',
-        'color': '#000'
-      },
-      {
-        'title': 'Porpetone',
-        'icon': 'https://image.freepik.com/vetores-gratis/icone-de-pizza-colecao-de-fast-food-icone-de-comida-isolado_138676-504.jpg',
-        'description': 'The latest version of cascading stylesheets - the styling language of the web!',
-        'color': '#0CA9EA'
-      },
-      {
-        'title': 'Portuguesa',
-        'icon': 'https://image.freepik.com/vetores-gratis/icone-de-pizza-colecao-de-fast-food-icone-de-comida-isolado_138676-504.jpg',
-        'description': 'The official mascot of the Linux kernel!',
-        'color': '#000'
-      },
-      {
-        'title': 'Calabresa',
-        'icon': 'https://image.freepik.com/vetores-gratis/icone-de-pizza-colecao-de-fast-food-icone-de-comida-isolado_138676-504.jpg',
-        'description': 'The latest version of cascading stylesheets - the styling language of the web!',
-        'color': '#0CA9EA'
-      },
-      {
-        'title': 'Calabresa',
-        'icon': 'https://image.freepik.com/vetores-gratis/icone-de-pizza-colecao-de-fast-food-icone-de-comida-isolado_138676-504.jpg',
-        'description': 'The official mascot of the Linux kernel!',
-        'color': '#000'
-      },
-    ];
-    storage.setItem("total", "12,00");
-    var total = storage.getItem("total");
-
+    
    
     const nav = document.querySelector('ion-nav');
 
-    function showDetail(title) {
-      const tech = techs.find(tech => tech.title === title);
-      nav.push('nav-detail', { tech });
+    function showDetail(sabor) {
+      const prod = produtos.pizza.find(prod => prod.sabor === sabor);
+      nav.push('nav-detail', { prod });
     }
 
     function atualiza_total(valor){

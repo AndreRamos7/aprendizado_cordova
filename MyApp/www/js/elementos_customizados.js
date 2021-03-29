@@ -18,28 +18,20 @@ customElements.define('nav-home', class NavHome extends HTMLElement {
 
         <ion-content fullscreen>
           <ion-list>
-          ${techs.map(tech => `
-              <ion-item button onclick="showDetail('${tech.title}')">
-                  <img src="${tech.icon}" width="100">
+          ${produtos['pizza'].map(tech => `
+              <ion-item button onclick="showDetail('${tech.sabor}')">
+                  <img src="${tech.icone}" width="100">
                 <ion-label>
-                  <h3>${tech.title}</h3>
+                  <h3>${tech.sabor}</h3>
                 </ion-label>
                 <ion-spinner name="lines"></ion-spinner>
               </ion-item>
           `).join('\n')}
           </ion-list>
         </ion-content>
-
-        <ion-footer>
-          <ion-toolbar>
-            <ion-text color="primary">Total: R$ ${total}</ion-text>
-            <ion-button size="xx-small" slot="end" color="primary" onclick="alert('oi');">Meus pedidos</ion-button>
-          </ion-toolbar>
-        </ion-footer>
       `;
     }
   });
-
 
 
   // =======================================
@@ -53,16 +45,16 @@ customElements.define('nav-home', class NavHome extends HTMLElement {
             <ion-buttons slot="start">
               <ion-back-button defaultHref="/"></ion-back-button>
             </ion-buttons>
-            <ion-title>${this.tech.title}</ion-title>
+            <ion-title>${this.prod.sabor}</ion-title>
           </ion-toolbar>
         </ion-header>
 
         <ion-content fullscreen class="ion-padding">
             <ion-header>
                 
-                <img src="${this.tech.icon}" width="100" />
+                <img src="${this.prod.icone}" width="100" />
                 
-                <p>${this.tech.description}</p>
+                <p>${this.prod.descricao}</p>
             </ion-header>
             
           
@@ -106,13 +98,6 @@ customElements.define('nav-home', class NavHome extends HTMLElement {
             </ion-item>
           </ion-list>
         </ion-content>
-
-        <ion-footer>
-          <ion-toolbar>
-            <ion-text color="primary" id="valor_total">Total: R$ 00,00</ion-text>
-            <ion-button size="xx-small" slot="end" color="primary">Adicionar</ion-button>
-          </ion-toolbar>
-        </ion-footer>
       `;
     }
   });
