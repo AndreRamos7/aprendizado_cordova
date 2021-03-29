@@ -30,6 +30,18 @@
     <script type="module">
       import { menuController } from 'https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/index.esm.js';
       window.menuController = menuController;
+      import { loadingController } from 'https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/index.esm.js';
+      window.loadingController = loadingController;
+    </script>
+    <script>
+      async function handleButtonClick() {
+        const loading = await loadingController.create({
+          message: 'Please wait...',
+          duration: 3000
+        });
+        await menuController.close();
+        await loading.present();
+      }
     </script>
 </head>
 <body>    
@@ -55,6 +67,7 @@
                 <ion-chip>X-Burguer</ion-chip>
               </ion-item>              
             </ion-list>
+            <ion-button expand="block" onclick="handleButtonClick()">Show Loading</ion-button>
           </ion-content>
         </ion-menu>
     
