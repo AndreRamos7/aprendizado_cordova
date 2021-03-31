@@ -10,11 +10,24 @@ produtos = { "pizza": [
     {'sabor': 'Calabresa',
     'icone': 'https://images.rappi.com.br/products/2097701218-1591715125868.png?d=128x90',
     'descricao': 'Calabresa com queijo, presunto, alho, cebola, pimentão e tomate',
+    'valor': '15,00',
     'itens_adicionais': [
-        {'nome':'alho', 'valor': '0,5'}, 
-        {'nome':'orégano', 'valor': '0,5'},
-        {'nome':'pimentão', 'valor': '0,5'},
-        {'nome':'presunto', 'valor': '0,5'}
+        {'nome':'alho', 'valor': '0,50'}, 
+        {'nome':'orégano', 'valor': '0,50'},
+        {'nome':'pimentão', 'valor': '0,50'},
+        {'nome':'presunto', 'valor': '0,50'}
+        ]
+    },
+    
+    {'sabor': 'Portuguesa',
+    'icone': 'https://images.rappi.com.br/products/2097701218-1591715125868.png?d=128x90',
+    'descricao': 'Calabresa com queijo, presunto, alho, cebola, pimentão e tomate',
+    'valor': '15,00',
+    'itens_adicionais': [
+        {'nome':'alho', 'valor': '0,50'}, 
+        {'nome':'orégano', 'valor': '0,50'},
+        {'nome':'pimentão', 'valor': '0,50'},
+        {'nome':'presunto', 'valor': '0,50'}
         ]
     },
 

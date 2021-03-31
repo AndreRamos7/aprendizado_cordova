@@ -45,7 +45,7 @@
           duration: 3000
         });
         await menuController.close();
-        await loading.present();
+        await loading.present();       
       }
     </script>
 </head>
@@ -99,7 +99,7 @@
                 <ion-header translucent>
                   <ion-toolbar>
                     <ion-title>Comanda</ion-title>                  
-                    <ion-button  color="success" slot="end"> 
+                    <ion-button  color="success" slot="end" onclick="handleButtonClick()"> 
                       <ion-icon name="send-outline"></ion-icon> 
                       Enviar
                     </ion-button>

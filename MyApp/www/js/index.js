@@ -36,3 +36,12 @@ function teste(){
     console.log('seletor');
     
 }
+
+async function presentToast() {
+    const toast = document.createElement('ion-toast');
+    toast.message = 'Adicionado! Visualize a comanda.';
+    toast.duration = 2000;
+
+    document.body.appendChild(toast);
+    return toast.present();
+}
