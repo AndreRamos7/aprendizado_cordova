@@ -10,6 +10,7 @@
     <script type="text/Javascript" src="js/armazem_cookies.js"></script>
     <script type="text/Javascript" src="js/index.js"></script>
     <script type="text/Javascript" src="js/model.js"></script>
+    <script type="text/Javascript" src="js/controllers.js"></script>
     <script type="text/Javascript" src="cordova.js"></script>
     <link rel="stylesheet" href="css/estilo.css"/>
     <style>
@@ -83,7 +84,7 @@
                 <ion-menu-button></ion-menu-button>
               </ion-buttons>
               <ion-title>Itens</ion-title>
-              <ion-title slot="end">TOTAL: R$ 00,00</ion-title>
+              <ion-title slot="end" id="valor_total">TOTAL: R$ 00,00</ion-title>
             </ion-toolbar>
           </ion-header>
 
@@ -106,7 +107,7 @@
                   </ion-toolbar>
                 </ion-header>
         
-                <ion-content fullscreen class="ion-padding">
+                <ion-content >
                     <ion-list>                    
                         <ion-item >                            
                           <ion-label>
@@ -171,14 +172,7 @@
           </ion-content>
         </div>
   </ion-app>
-  
-  <script type="text/Javascript">
-      document.addEventListener("backbutton", onBackKeyDown, false);  
-      function onBackKeyDown(e) { 
-        e.preventDefault(); 
-        alert('Back Button is Pressed!'); 
-      }
-  </script>
+
   <script>
     async function openMenu() {
       await menuController.open();
@@ -198,7 +192,7 @@
     function atualiza_total(valor){
       storage.setItem("total", valor);
       var valor_total = document.getElementById("valor_total");
-      valor_total.innerText = valor;
+      valor_total.innerText = "Total R$ " + valor;
     }
 
     

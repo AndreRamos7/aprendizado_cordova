@@ -29,12 +29,19 @@ function onDeviceReady() {
     //document.getElementById('deviceready').classList.add('ready');
     //teste();
     document.getElementById('seletor').addEventListener('ionChange', teste, false);
+    document.addEventListener("backbutton", onBackKeyDown, false);  
 }
 
 
 function teste(){
     console.log('seletor');
     
+}
+
+
+function onBackKeyDown(e) { 
+    e.preventDefault(); 
+    alert('Back Button is Pressed!'); 
 }
 
 async function presentToast() {

@@ -39,7 +39,7 @@ customElements.define('nav-home', class NavHome extends HTMLElement {
 
 
 
-  // =======================================
+  // ===========================================================================
 
 
   customElements.define('nav-detail', class NavDetail extends HTMLElement {
@@ -51,7 +51,12 @@ customElements.define('nav-home', class NavHome extends HTMLElement {
               <ion-back-button defaultHref="/"></ion-back-button>
             </ion-buttons>
             <ion-title>${this.prod.sabor}</ion-title>            
-            <ion-button  color="primary" slot="end" onClick="presentToast()"> 
+            <ion-button  color="primary" slot="end" 
+              onClick="adicionar_produto(
+                
+                {'nome':'${this.prod.sabor}'}
+                
+                )"> 
               <ion-icon name="add-circle-outline" ></ion-icon>
               Adicionar
             </ion-button>

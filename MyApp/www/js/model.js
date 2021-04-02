@@ -7,7 +7,8 @@ var storage = window.localStorage;
 */
 
 produtos = { "pizza": [
-    {'sabor': 'Calabresa',
+    {'id': '123321',
+    'sabor': 'Calabresa',
     'icone': 'https://images.rappi.com.br/products/2097701218-1591715125868.png?d=128x90',
     'descricao': 'Calabresa com queijo, presunto, alho, cebola, pimentão e tomate',
     'valor': '15,00',
@@ -24,7 +25,8 @@ produtos = { "pizza": [
         ]
     },
     
-    {'sabor': 'Portuguesa',
+    {'id': '1235241',
+    'sabor': 'Portuguesa',
     'icone': 'https://images.rappi.com.br/products/2097701218-1591715125868.png?d=128x90',
     'descricao': 'Calabresa com queijo, presunto, alho, cebola, pimentão e tomate',
     'valor': '15,00',
