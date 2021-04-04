@@ -40,10 +40,11 @@ customElements.define('nav-home', class NavHome extends HTMLElement {
 // ===========================================================================
 // ===========================================================================
 // ===========================================================================
-
+  var sabor;
 
   customElements.define('nav-detail', class NavDetail extends HTMLElement {
     connectedCallback() {
+      sabor = this.prod.sabor;
       this.innerHTML = `
         <ion-header translucent>
           <ion-toolbar>
@@ -101,7 +102,7 @@ customElements.define('nav-home', class NavHome extends HTMLElement {
           <ion-list>
             ${this.prod.itens_adicionais.map(item => `
               <ion-item>  
-                <ion-checkbox id="${item.nome}" slot="start" value="cebola" checked></ion-checkbox>
+                <ion-checkbox class="itens_adicionais" id="" slot="start" value="${item.nome}" checked></ion-checkbox>
                 <ion-label>${item.nome + ' ' +  item.valor}</ion-label>              
               </ion-item>
             `).join('\n')}
@@ -118,13 +119,23 @@ customElements.define('nav-home', class NavHome extends HTMLElement {
       `;
       
       document.getElementById("tamanho").addEventListener('ionChange', tamanhoModificado, false);
+      document.getElementById("bordas").addEventListener('ionChange', bordasModificado, false);
+      var itens_adicionais = document.getElementsByClassName("itens_adicionais");     
+      
+      Array.prototype.map.call(itens_adicionais, iten => {iten.addEventListener('ionChange', it => console.log(it.detail.value), false) });     
      
     }
    
   });
   
   function tamanhoModificado() {
-    console.log(document.getElementById("tamanho").value + " .. ");
+    console.log(document.getElementById("tamanho").value + " .. " + sabor);
+  }
+  function bordasModificado() {
+    console.log(document.getElementById("bordas").value + " .. " + sabor);
+  }
+  function itensModificado() {
+    console.log(document.getElementById("bordas").value + " .. " + sabor);
   }
 
   const nav = document.querySelector('ion-nav');

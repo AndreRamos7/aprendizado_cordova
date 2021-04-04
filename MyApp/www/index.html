@@ -179,18 +179,13 @@
     }
   </script>
   <script type="text/Javascript" src="js/elementos_customizados.js"></script>
-<script>
-    
-   
-    
+  <script>
 
-    function atualiza_total(valor){
-      storage.setItem("total", valor);
-      var valor_total = document.getElementById("valor_total");
-      valor_total.innerText = "Total R$ " + valor;
-    }
-
-    
+      function atualiza_total(valor){
+        storage.setItem("total", valor);
+        var valor_total = document.getElementById("valor_total");
+        valor_total.innerText = "Total R$ " + valor;
+      }
   </script>
 </body>
 </html>

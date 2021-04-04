@@ -11,11 +11,11 @@ produtos = { "pizza": [
     'sabor': 'Calabresa',
     'icone': 'https://images.rappi.com.br/products/2097701218-1591715125868.png?d=128x90',
     'descricao': 'Calabresa com queijo, presunto, alho, cebola, pimentão e tomate',
-    'valor': '15,00',
+    'valor': '15.00',
     'tipo': [
-        {'tamanho': 'grande', 'valor' : '20,00'},
-        {'tamanho': 'média', 'valor' : '24,00'},
-        {'tamanho': 'pequena', 'valor' : '28,00'}
+        {'tamanho': 'grande', 'valor' : '20.00'},
+        {'tamanho': 'média', 'valor' : '24.00'},
+        {'tamanho': 'pequena', 'valor' : '28.00'}
     ],
     'bordas': [
         {'nome': 'catchup'},
@@ -23,10 +23,10 @@ produtos = { "pizza": [
         {'nome': 'cheldar'}
     ],
     'itens_adicionais': [
-        {'nome':'alho', 'valor': '0,50'}, 
-        {'nome':'orégano', 'valor': '0,50'},
-        {'nome':'pimentão', 'valor': '0,50'},
-        {'nome':'presunto', 'valor': '0,50'}
+        {'nome':'alho', 'valor': '0.50'}, 
+        {'nome':'orégano', 'valor': '0.50'},
+        {'nome':'pimentão', 'valor': '0.50'},
+        {'nome':'presunto', 'valor': '0.50'}
         ]
     },
     
@@ -34,11 +34,11 @@ produtos = { "pizza": [
     'sabor': 'Portuguesa',
     'icone': 'https://images.rappi.com.br/products/2097701218-1591715125868.png?d=128x90',
     'descricao': 'Calabresa com queijo, presunto, alho, cebola, pimentão e tomate',
-    'valor': '15,00',
+    'valor': '15.00',
     'tipo': [
-        {'tamanho': 'grande', 'valor' : '20,00'},
-        {'tamanho': 'média', 'valor' : '24,00'},
-        {'tamanho': 'pequena', 'valor' : '28,00'}
+        {'tamanho': 'grande', 'valor' : '20.00'},
+        {'tamanho': 'média', 'valor' : '24.00'},
+        {'tamanho': 'pequena', 'valor' : '28.00'}
     ],    
     'bordas': [
         {'nome': 'catchup'},
@@ -46,10 +46,10 @@ produtos = { "pizza": [
         {'nome': 'cheldar'}
     ],
     'itens_adicionais': [
-        {'nome':'alho', 'valor': '0,50'}, 
-        {'nome':'orégano', 'valor': '0,50'},
-        {'nome':'pimentão', 'valor': '0,50'},
-        {'nome':'presunto', 'valor': '0,50'}
+        {'nome':'alho', 'valor': '0.50'}, 
+        {'nome':'orégano', 'valor': '0.50'},
+        {'nome':'pimentão', 'valor': '0.50'},
+        {'nome':'presunto', 'valor': '0.50'}
         ]
     },
 
