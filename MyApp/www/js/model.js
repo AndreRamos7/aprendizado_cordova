@@ -14,8 +14,13 @@ produtos = { "pizza": [
     'valor': '15,00',
     'tipo': [
         {'tamanho': 'grande', 'valor' : '20,00'},
-        {'tamanho': 'média', 'valor' : '20,00'},
-        {'tamanho': 'pequena', 'valor' : '20,00'}
+        {'tamanho': 'média', 'valor' : '24,00'},
+        {'tamanho': 'pequena', 'valor' : '28,00'}
+    ],
+    'bordas': [
+        {'nome': 'catchup'},
+        {'nome': 'catupiri'},
+        {'nome': 'cheldar'}
     ],
     'itens_adicionais': [
         {'nome':'alho', 'valor': '0,50'}, 
@@ -32,8 +37,13 @@ produtos = { "pizza": [
     'valor': '15,00',
     'tipo': [
         {'tamanho': 'grande', 'valor' : '20,00'},
-        {'tamanho': 'média', 'valor' : '20,00'},
-        {'tamanho': 'pequena', 'valor' : '20,00'}
+        {'tamanho': 'média', 'valor' : '24,00'},
+        {'tamanho': 'pequena', 'valor' : '28,00'}
+    ],    
+    'bordas': [
+        {'nome': 'catchup'},
+        {'nome': 'catupiri'},
+        {'nome': 'cheldar'}
     ],
     'itens_adicionais': [
         {'nome':'alho', 'valor': '0,50'}, 
@@ -45,5 +55,5 @@ produtos = { "pizza": [
 
 ]};
 
-storage.setItem("total", "12,00");
+//storage.setItem("total", "12,00");
 var total = storage.getItem("total");

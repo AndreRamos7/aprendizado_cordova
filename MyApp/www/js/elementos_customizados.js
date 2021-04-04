@@ -37,9 +37,9 @@ customElements.define('nav-home', class NavHome extends HTMLElement {
     }
   });
 
-
-
-  // ===========================================================================
+// ===========================================================================
+// ===========================================================================
+// ===========================================================================
 
 
   customElements.define('nav-detail', class NavDetail extends HTMLElement {
@@ -54,7 +54,9 @@ customElements.define('nav-home', class NavHome extends HTMLElement {
             <ion-button  color="primary" slot="end" 
               onClick="adicionar_produto(
                 
-                {'nome':'${this.prod.sabor}'}
+                {'nome':'${this.prod.sabor}', 
+                'valor': '${this.prod.valor}',
+                'tipo_valor': '${this.prod.tipo[0].valor}'}
                 
                 )"> 
               <ion-icon name="add-circle-outline" ></ion-icon>
@@ -73,10 +75,10 @@ customElements.define('nav-home', class NavHome extends HTMLElement {
                 <ion-item>
                   <ion-label>Tamanho:</ion-label>
 
-                  <ion-select value="" interface="popover">
+                  <ion-select id="tamanho" value="" interface="popover">
                     ${this.prod.tipo.map(item => `
                       <ion-select-option value="${item.tamanho}"> 
-                          ${item.tamanho + ' ' +  item.valor}              
+                          ${item.tamanho + ', ' +  item.valor}              
                       </ion-select-option >
                     `).join('\n')}
                   </ion-select>
@@ -84,12 +86,12 @@ customElements.define('nav-home', class NavHome extends HTMLElement {
 
                 <ion-item>
                   <ion-label>Bordas</ion-label>                
-                  <ion-select name="bordas" interface="popover">
-                      <ion-select-option value="catupiri">catupiri</ion-select-option>
-                      <ion-select-option value="catchup">catchup</ion-select-option>
-                      <ion-select-option value="recheada">recheada</ion-select-option>
-                      <ion-select-option value="mostarda">mostarda</ion-select-option>
-                      <ion-select-option value="maionese">maionese</ion-select-option>
+                  <ion-select id="bordas" name="bordas" interface="popover">
+                  ${this.prod.bordas.map(item => `
+                      <ion-select-option value=" ${item.nome}">
+                      ${item.nome + ', '} 
+                      </ion-select-option>
+                  `).join('\n')}   
                   </ion-select>
                 </ion-item>              
             </ion-list>
@@ -99,13 +101,13 @@ customElements.define('nav-home', class NavHome extends HTMLElement {
           <ion-list>
             ${this.prod.itens_adicionais.map(item => `
               <ion-item>  
-                <ion-checkbox slot="start" value="cebola" checked></ion-checkbox>
+                <ion-checkbox id="${item.nome}" slot="start" value="cebola" checked></ion-checkbox>
                 <ion-label>${item.nome + ' ' +  item.valor}</ion-label>              
               </ion-item>
             `).join('\n')}
           </ion-list>
           <!-- Textarea in an item with a placeholder -->       
-          <ion-textarea placeholder="Entre com mais informações aqui..."></ion-textarea>
+          <ion-textarea id="obs" placeholder="Entre com mais informações aqui..."></ion-textarea>
         </ion-content>
 
         <ion-footer>
@@ -114,5 +116,20 @@ customElements.define('nav-home', class NavHome extends HTMLElement {
           </ion-toolbar>
         </ion-footer>
       `;
+      
+      document.getElementById("tamanho").addEventListener('ionChange', tamanhoModificado, false);
+     
     }
+   
   });
+  
+  function tamanhoModificado() {
+    console.log(document.getElementById("tamanho").value + " .. ");
+  }
+
+  const nav = document.querySelector('ion-nav');
+
+  function showDetail(sabor) {
+    const prod = produtos.pizza.find(prod => prod.sabor === sabor);
+    nav.push('nav-detail', { prod });
+  }
