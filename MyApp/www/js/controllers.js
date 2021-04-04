@@ -5,5 +5,6 @@ function adicionar_produto(produto){
 
     console.log(comanda);
     atualiza_total(comanda.length);
+    presentToast();
 
 }

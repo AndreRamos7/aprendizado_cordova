@@ -40,11 +40,11 @@ customElements.define('nav-home', class NavHome extends HTMLElement {
 // ===========================================================================
 // ===========================================================================
 // ===========================================================================
-  var sabor;
+  var o_produto;
 
   customElements.define('nav-detail', class NavDetail extends HTMLElement {
     connectedCallback() {
-      sabor = this.prod.sabor;
+      o_produto = this.prod;
       this.innerHTML = `
         <ion-header translucent>
           <ion-toolbar>
@@ -122,20 +122,20 @@ customElements.define('nav-home', class NavHome extends HTMLElement {
       document.getElementById("bordas").addEventListener('ionChange', bordasModificado, false);
       var itens_adicionais = document.getElementsByClassName("itens_adicionais");     
       
-      Array.prototype.map.call(itens_adicionais, iten => {iten.addEventListener('ionChange', it => console.log(it.detail.value), false) });     
+      Array.prototype.map.call(itens_adicionais, iten => {iten.addEventListener('ionChange', it => console.log(it.detail.value + ' ' + it.detail.checked), false) });     
      
     }
    
   });
   
   function tamanhoModificado() {
-    console.log(document.getElementById("tamanho").value + " .. " + sabor);
+    console.log(document.getElementById("tamanho").value + " .. " + o_produto);
   }
   function bordasModificado() {
-    console.log(document.getElementById("bordas").value + " .. " + sabor);
+    console.log(document.getElementById("bordas").value + " .. " + o_produto);
   }
   function itensModificado() {
-    console.log(document.getElementById("bordas").value + " .. " + sabor);
+    console.log(document.getElementById("bordas").value + " .. " + o_produto);
   }
 
   const nav = document.querySelector('ion-nav');
