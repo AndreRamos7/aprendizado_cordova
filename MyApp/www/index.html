@@ -48,6 +48,8 @@
         await menuController.close();
         await loading.present();       
       }
+
+      
     </script>
 </head>
 <body>    
@@ -181,11 +183,13 @@
   <script type="text/Javascript" src="js/elementos_customizados.js"></script>
   <script>
 
-      function atualiza_total(valor){
-        storage.setItem("total", valor);
+      function atualiza_total(){
+        var valor = storage.getItem("total");
         var valor_total = document.getElementById("valor_total");
         valor_total.innerText = "Total R$ " + valor;
       }
+
+      atualiza_total();
   </script>
 </body>
 </html>
