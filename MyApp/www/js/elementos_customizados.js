@@ -3,7 +3,7 @@ customElements.define('nav-home', class NavHome extends HTMLElement {
       this.innerHTML = `
       <ion-header >
           <ion-toolbar>
-            <ion-searchbar></ion-searchbar>
+            <ion-searchbar show-cancel-button="focus"></ion-searchbar>
           </ion-toolbar>
           <ion-toolbar>           
               <ion-button size="xx-small" color="primary" class="botao_de_ordenacao">Cód.</ion-button>
@@ -144,3 +144,4 @@ customElements.define('nav-home', class NavHome extends HTMLElement {
     const prod = produtos.pizza.find(prod => prod.sabor === sabor);
     nav.push('nav-detail', { prod });
   }
+
