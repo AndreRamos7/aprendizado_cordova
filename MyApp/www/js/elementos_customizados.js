@@ -1,42 +1,3 @@
-customElements.define('nav-home', class NavHome extends HTMLElement {
-    connectedCallback() {
-      this.innerHTML = `
-      <ion-header >
-          <ion-toolbar>
-            <ion-searchbar show-cancel-button="focus"></ion-searchbar>
-          </ion-toolbar>
-          <ion-toolbar>           
-              <ion-button size="xx-small" color="primary" class="botao_de_ordenacao">Cód.</ion-button>
-              <ion-button size="xx-small" color="secondary" class="botao_de_ordenacao">Nome</ion-button>
-              <ion-button size="xx-small" color="success" class="botao_de_ordenacao">Preço</ion-button>
-              <ion-button size="xx-small" color="success" class="botao_de_ordenacao" slot="end" onClick="presentToast()">Múltiplos</ion-button>
-        
-          </ion-toolbar>
-      </ion-header>
-
-        <ion-content fullscreen>
-          <ion-list>
-          ${produtos['pizza'].map(prod => `
-              <ion-item button onclick="showDetail('${prod.sabor}')">
-                  <img src="${prod.icone}" width="100">
-                <ion-label>
-                  <h3>${prod.sabor}</h3>
-                </ion-label>
-                <ion-text>R$ ${prod.valor}</ion-text>
-              </ion-item>
-          `).join('\n')}
-          </ion-list>          
-        </ion-content>
-
-        <ion-footer>
-          <ion-toolbar>
-            
-          </ion-toolbar>
-        </ion-footer>
-      `;
-    }
-  });
-
 // ===========================================================================
 // ===========================================================================
 // ===========================================================================
@@ -138,10 +99,5 @@ customElements.define('nav-home', class NavHome extends HTMLElement {
     console.log(document.getElementById("bordas").value + " .. " + o_produto);
   }
 
-  const nav = document.querySelector('ion-nav');
-
-  function showDetail(sabor) {
-    const prod = produtos.pizza.find(prod => prod.sabor === sabor);
-    nav.push('nav-detail', { prod });
-  }
+ 
 

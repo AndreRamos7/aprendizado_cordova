@@ -29,6 +29,8 @@ function onDeviceReady() {
     //document.getElementById('deviceready').classList.add('ready');
     //teste();
     document.getElementById('seletor').addEventListener('ionChange', teste, false);
+    
+
     document.addEventListener("backbutton", onBackKeyDown, false);  
 }
 

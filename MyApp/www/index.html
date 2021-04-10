@@ -7,11 +7,14 @@
     <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
     <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script type="text/Javascript" src="js/armazem_cookies.js"></script>
     <script type="text/Javascript" src="js/index.js"></script>
     <script type="text/Javascript" src="js/model.js"></script>
     <script type="text/Javascript" src="js/controllers.js"></script>
     <script type="text/Javascript" src="cordova.js"></script>
+    <script type="text/Javascript" src="js/elementos_customizados.js"></script>
+    <script type="text/Javascript" src="js/angular_script.js"></script>
     <link rel="stylesheet" href="css/estilo.css"/>
     <style>
       :root {
@@ -52,8 +55,8 @@
       
     </script>
 </head>
-<body>    
-  <ion-app> 
+<body id="deviceready">    
+  <ion-app  ng-app="myApp" ng-controller="myCtrl"> 
         <ion-menu side="start" content-id="main-content">
           <ion-header>
             <ion-toolbar translucent>
@@ -93,10 +96,39 @@
           <ion-content class="ion-padding">
             <ion-tabs>
               <ion-tab tab="music">
-                <ion-content fullscreen class="ion-padding">
-                  <ion-nav root="nav-home"></ion-nav>
-
-                  
+                <ion-content class="ion-padding">
+                  <ion-nav >
+                    <ion-header >
+                      <ion-toolbar>
+                        <ion-searchbar show-cancel-button="focus"></ion-searchbar>
+                      </ion-toolbar>
+                      <ion-toolbar>           
+                          <ion-button size="xx-small" color="primary" class="botao_de_ordenacao">Cód.</ion-button>
+                          <ion-button size="xx-small" color="secondary" class="botao_de_ordenacao">Nome</ion-button>
+                          <ion-button size="xx-small" color="success" class="botao_de_ordenacao">Preço</ion-button>
+                          <ion-button size="xx-small" color="success" class="botao_de_ordenacao" slot="end" onClick="presentToast()">Múltiplos</ion-button>
+                    
+                      </ion-toolbar>
+                  </ion-header>
+            
+                    <ion-content >
+                      <ion-list>                      
+                          <ion-item button ng-repeat="pdt in prod" ng-click="showDetail(pdt.sabor)">
+                            <img src='{{pdt.icone}}' width="100">
+                            <ion-label >
+                              <h3>{{ pdt.sabor }}</h3>
+                            </ion-label>
+                            <ion-text >R$ {{ pdt.valor }}</ion-text>
+                          </ion-item>
+                     
+                      </ion-list>          
+                    </ion-content>
+            
+                    <ion-footer>
+                      <ion-toolbar>                        
+                      </ion-toolbar>
+                    </ion-footer>
+                  </ion-nav>                  
                 </ion-content>
               </ion-tab>
         
@@ -182,7 +214,7 @@
       await menuController.open();
     }
   </script>
-  <script type="text/Javascript" src="js/elementos_customizados.js"></script>
+  
   <script>
 
       function atualiza_total(){
